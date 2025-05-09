@@ -9,7 +9,8 @@
 2. Install your preferred file manager. I recommend Pantheon files.
 
 3. Install B00merang-Artwork's Mac-OS-X-Lion icon pack.
-	
+
+
 	 - git clone https://github.com/B00merang-Artwork/Mac-OS-X-Lion # Clone the icon pack
 	 - sudo mv Mac-OS-X-Lion /usr/share/icons/ # Move contents of icon pack to the icon folder.
 	 - sudo apt install lxapperance # Install lxappearance for debian
