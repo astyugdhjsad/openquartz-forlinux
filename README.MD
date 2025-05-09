@@ -22,3 +22,7 @@ sudo apt install --no-install-recommends openbox sddm xorg
     # Close lxappearance
     sudo /sbin/reboot
     ```
+4. Install `picom` to replace `quartz` and `plank` to replace the dock:
+    ```
+    sudo apt install picom plank
+    ```
