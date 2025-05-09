@@ -26,3 +26,13 @@ sudo apt install --no-install-recommends openbox sddm xorg
     ```
     sudo apt install picom plank
     ```
+5. Add these programs to your `autostart`
+    ```
+    sudo apt install vim
+    mkdir ~/.config/openbox/
+    vim ~/.config/openbox/autostart
+    ```
+    Create these lines:
+    ```
+    picom &
+    plank &
