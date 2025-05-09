@@ -36,3 +36,13 @@ sudo apt install --no-install-recommends openbox sddm xorg
     ```
     picom &
     plank &
+6. Exit openbox and login again
+    Right-click an empty space of the dock
+    Click "Preferences" in the context menu
+    Click "Icon Zoom"
+    Adjust the magnification
+7. Install OQPref
+    ```
+    WIP
+    ```
+8. Select one of the available themes
