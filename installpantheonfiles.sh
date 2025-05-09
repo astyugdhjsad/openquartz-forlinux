@@ -21,3 +21,4 @@ cd files
 meson build --prefix=/usr
 cd build
 ninja
+ninja install
