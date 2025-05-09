@@ -4,7 +4,7 @@ MOUNTAIN LION:
 
 Debian: sudo apt install nautilus gthumb rhythmbox rawtherapee file-roller galculator gnome-calendar gnome-contacts gnome-clocks kitty goldendict gnome-disks vlc font-manager
 
-Finder -> Nautilus
+Finder -> Pantheon
 
 iPhoto -> Gthumb
 
