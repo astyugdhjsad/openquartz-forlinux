@@ -1,0 +1,51 @@
+# Debian 13 Base
+# Enter the home directory of the user
+cd ~
+# Install SDDM without Plasma:
+echo 'Installing the SDDM display manager'
+apt install --no-install-recommends sddm
+# Install labwc:
+echo 'Installing the labwc Wayland compositor.'
+apt install labwc
+# Install terminal
+echo 'Installing the kitty terminal'
+apt install kitty
+# Install wallpaper utils
+echo 'Installing feh'
+apt install feh
+echo 'Building mpvpaper from source'
+apt install libmpv-dev meson git
+git clone --single-branch https://github.com/GhostNaN/mpvpaper
+cd mpvpaper
+meson setup build --prefix=/usr/local
+ninja -C build
+ninja -C build install
+cd ~
+rm -rf mpvpaper
+# Install GTK theme for Skeuomorphism
+git clone https://github.com/orchyn/XFCE
+mv XFCE/OSX_Lion/ /usr/share/themes
+chown -R root:root /usr/share/themes/OSX-Lion
+chmod -R 755 /usr/share/themes/OSX-Lion
+rm -rf XFCE
+# Install GTK theme for Glassmorphism
+git clone https://github.com/vinceliuice/WhiteSur-gtk-theme
+mv WhiteSur-gtk-theme/release/WhiteSur-Light.tar.xz /usr/share/themes
+mkdir /usr/share/themes/Glasmorphism-Light
+tar -xvf /usr/share/themes/WhiteSur-Light.tar.xz -C /usr/share/themes
+mv WhiteSur-gtk-theme/release/WhiteSur-Dark.tar.xz /usr/share/themes
+mkdir /usr/share/themes/Glasmorphism-Dark
+tar -xvf /usr/share/themes/WhiteSur-Dark.tar.xz -C /usr/share/themes
+cd ~
+rm -rf WhiteSur-gtk-theme
+rm -rf /usr/share/themes/WhiteSur-Dark.tar.xz
+rm -rf /usr/share/themes/WhiteSur-Light.tar.xz
+# Set GTK theme to Glassmorphism
+gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-Light"
+# Install cursors
+echo 'Download macOS.tar.xz from the github releases of ful1e5/apple_cursor, place it in /root/'
+read -p "Press enter to continue..."
+tar -xvf macOS.tar.gz                      # extract `.tar.gz`
+sudo mv macOS* /usr/share/icons/           # Install to all users
+# Set cursor to Glassmorphism 
+gsettings set org.gnome.desktop.interface cursor-theme "macOS"
